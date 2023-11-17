@@ -1,0 +1,56 @@
+/*SliderComponent.css*/
+
+.slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 20px;
+}
+.slide-number {
+  position: absolute;
+  top: 80%;
+  color: white;
+  font-size: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.prev-button {
+  cursor: pointer;
+  position: absolute;
+  left: 15px;
+  top: 39%;
+  width: 60px;
+  height: 60px;
+  background: url("../image/prev.png") no-repeat center center;
+}
+
+.next-button {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 39%;
+  width: 60px;
+  height: 60px;
+  background: url("../image/next.png") no-repeat center center;
+}
+
+.slides img {
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+@media (max-width: 360px) {
+  .slides img {
+    width: 335px;
+    height: 255px;
+  }
+
+  .slide-number {
+    top: 80%;
+    font-size: 16px;
+  }
+}

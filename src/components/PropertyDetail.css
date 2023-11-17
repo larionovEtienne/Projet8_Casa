@@ -1,0 +1,22 @@
+.property-detail h2 {
+    font-size: 36px;
+    margin-top: 25px;
+    font-weight: 500;
+}
+.plocation  {
+    font-size: 18px;
+    margin-top: 15px;
+}
+.ptag {
+    margin-top: 15px;
+}
+.photohost img {
+    border-radius: 50%;
+
+}
+.photohost p {
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
