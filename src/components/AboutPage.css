@@ -1,0 +1,15 @@
+/*AboutPage.css*/
+.container-about {
+  flex-direction: column;
+  margin-top: 35px;
+  display: flex;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-about {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,50 @@
+/* ExpandableSection.css */
+.expandable-section {
+  margin-bottom: 20px;
+  flex: 1;
+  max-width: 100%;
+}
+
+.expand-button {
+  background-color: rgba(255, 96, 96, 1);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.expand-button::after {
+  content: url("../image/arrow.png");
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.expanded .expand-button::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.content-container {
+  display: none;
+  padding: 10px;
+  background-color: #f1f1f1;
+  max-width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.expanded .content-container {
+  display: block;
+}
+@media only screen and (max-width: 700px) {
+  .expandable-section {
+  }
+}

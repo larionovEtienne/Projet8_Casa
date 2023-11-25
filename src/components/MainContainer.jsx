@@ -1,12 +1,14 @@
 // MainContainer.jsx
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "./Card";
 import "./MainContainer.css";
 
 const MainContainer = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,11 +23,13 @@ const MainContainer = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(error.message || "An error occurred while fetching data");
+
+        navigate("/404");
       }
     };
 
     fetchData();
-  }, []);
+  }, [navigate]);
 
   if (error) {
     return <div>Error: {error}</div>;

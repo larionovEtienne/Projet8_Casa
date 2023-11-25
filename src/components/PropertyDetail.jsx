@@ -1,3 +1,4 @@
+// PropertyDetail.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SliderComponent from "./SliderComponent";
@@ -51,28 +52,64 @@ const PropertyDetail = () => {
       {Array.isArray(property.pictures) && property.pictures.length > 0 && (
         <SliderComponent pictures={property.pictures} />
       )}
-      <h2>{property.title}</h2>
-      <p className="plocation">{property.location}</p>
-      {property.tags && <p className="ptag">{property.tags.join(", ")}</p>}
-      <div className="photohost">
-        {property.host && <p className="phost">{property.host.name}</p>}
-        {property.host && (
-          <img
-            src={property.host.picture}
-            alt={`Host: ${property.host.name}`}
-          />
-        )}
-      </div>
-      <p>Rating: {renderRatingStars(property.rating)}</p>
+      <div className="info-container">
+        <div className="title-h2">
+          <h2>{property.title}</h2>
+        </div>
+        <div className="location">
+          <p>{property.location}</p>
+        </div>
 
-      <ExpandableSection
-        title="Description"
-        content={<p>{property.description}</p>}
-      />
-      <ExpandableSection
-        title="Equipments"
-        content={property.equipments && <p>{property.equipments.join(", ")}</p>}
-      />
+        <div className="host-man">
+          {property.host && (
+            <p>
+              {property.host.name && (
+                <>
+                  <span>{property.host.name.split(" ")[0]}</span>
+                  <br />
+                  <span>
+                    {property.host.name.split(" ").slice(1).join(" ")}{" "}
+                  </span>
+                </>
+              )}
+            </p>
+          )}
+
+          {property.host && (
+            <img
+              src={property.host.picture}
+              alt={`Host: ${property.host.name}`}
+            />
+          )}
+        </div>
+
+        <div className="tags">
+          {property.tags &&
+            property.tags.map((tag, index) => <p key={index}>{tag}</p>)}
+        </div>
+        <div className="stars">
+          <p>{renderRatingStars(property.rating)}</p>
+        </div>
+      </div>
+
+      <div className="collaps">
+        <ExpandableSection
+          title="Description"
+          content={<p>{property.description}</p>}
+        />
+        <ExpandableSection
+          title="Equipments"
+          content={
+            property.equipments && (
+              <div>
+                {property.equipments.map((equipment, index) => (
+                  <p key={index}>{equipment}</p>
+                ))}
+              </div>
+            )
+          }
+        />
+      </div>
     </div>
   );
 };

@@ -1,11 +1,10 @@
 .card {
     border: 1px solid #ccc;
     border-radius: 10px;
-    max-width: 330px;
-    height: 330px;
+    max-width: 340px;
+    height: 340px;
     position: relative;
     background-color: white;
-
 }
 
 .card img {
@@ -24,8 +23,15 @@
 
 @media (max-width: 768px) {
     .card {
-        width: 260px;
+        width: 335px;
         height: 255px;
     }
 }
+@media (max-width: 365px) {
+    .card {
+        width: 280px;
+        height: 255px;
+    }
+}
+
 

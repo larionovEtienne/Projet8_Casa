@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+// Header.jsx
+import { Link, useLocation } from "react-router-dom";
 import "./header.css";
 import kImage from "../image/VectorK.png";
 import aImage from "../image/house.png";
@@ -6,6 +7,8 @@ import sImage from "../image/VectorS.png";
 import a2Image from "../image/VectorA.png";
 
 function Header() {
+  const location = useLocation();
+
   return (
     <header className="header">
       <span>
@@ -16,13 +19,21 @@ function Header() {
         <img src={a2Image} alt="A" />
       </span>{" "}
       <span>
-        <Link to="/" className="nav-link">
+        <Link
+          to="/"
+          className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+        >
           Accueil
         </Link>
         <span className="space"> </span>
-        <a href="#" className="nav-link">
+        <Link
+          to="/a-propos"
+          className={`nav-link ${
+            location.pathname === "/a-propos" ? "active" : ""
+          }`}
+        >
           A Propos
-        </a>
+        </Link>
       </span>
     </header>
   );

@@ -1,5 +1,7 @@
 // ExpandableSection.jsx
+
 import React, { useState } from "react";
+import "./ExpandableSection.css";
 
 const ExpandableSection = ({ title, content }) => {
   const [isExpanded, setExpanded] = useState(false);
@@ -9,11 +11,11 @@ const ExpandableSection = ({ title, content }) => {
   };
 
   return (
-    <div>
+    <div className={`expandable-section ${isExpanded ? "expanded" : ""}`}>
       <button onClick={toggleExpansion} className="expand-button">
         {title}
       </button>
-      {isExpanded && <div className="expanded-content">{content}</div>}
+      <div className="content-container">{content}</div>
     </div>
   );
 };

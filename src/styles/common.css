@@ -1,7 +1,7 @@
 body {
     font-family: Montserrat;
     color: rgba(255, 96, 96, 1);
-    max-width: 1240px;
-    margin: 0 auto; /* Centred content */
-    padding: 20px;
+    max-width: 1440px;
+    margin:  auto; /* Centred content */
+    padding: 10px;
 }
